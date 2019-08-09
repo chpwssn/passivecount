@@ -8,7 +8,7 @@ It's a web service, that tells you what page load you're on in a passive-agressi
 
 Because it's an example app and I can do what I want with it.
 
-## does it have to be so passive-agressive
+## does it have to be so passive-agressive?
 
 Yes, [a document outlines why](README.md)
 
