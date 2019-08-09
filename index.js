@@ -1,3 +1,4 @@
+const os = require("os");
 const redis = require("redis");
 
 const express = require("express");
@@ -27,6 +28,16 @@ app.get("/", (req, res) => {
       res.send(`Oh hooray, you made the counter go up to ${r}! ╮( ˘ ､ ˘ )╭`);
     }
   });
+});
+
+app.get("/meta", (req, res) => {
+  const stats = [`hostname: ${os.hostname()}`];
+  res.send(
+    [
+      "Ooooooo I know how to find new paths and see meta data! pshaw.",
+      ...stats
+    ].join("<br/>")
+  );
 });
 
 app.listen(config.express.port, () =>
