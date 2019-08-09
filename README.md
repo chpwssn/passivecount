@@ -44,3 +44,7 @@ This app doesn't really _do_ helpful things like "hot reload"
 You can deploy the app from its chart. Chances are you don't control `passive.chp.sh` so you can set the ingress host to `yourdomain.com` by deploying with:
 
     helm install --set ingress.hosts[0]=yourdomain.com chart/passivecount
+
+# this code is terrible, why?
+
+It's "vanilla" javascript with no webpack, transpilation, TypeScript, or frontend framework... of course it's terrible.
