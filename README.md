@@ -12,7 +12,7 @@ Because it's an example app and I can do what I want with it.
 
 Yes, [a document outlines why](README.md)
 
-It's an example app to refresh building a [helm](https://helm.sh) chart from scratch.
+It's an example app to refresh my memory on building a [helm](https://helm.sh) chart, and [k8s](https://kubernetes.io) in general, from scratch.
 
 ## how do I run it?
 
