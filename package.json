@@ -1,0 +1,14 @@
+{
+  "name": "count",
+  "version": "1.0.0",
+  "description": "It counts... using redis",
+  "main": "index.js",
+  "repository": "https://github.com/chpwssn/count",
+  "author": "Chip Wasson @chpwssn",
+  "license": "BSD",
+  "private": false,
+  "dependencies": {
+    "express": "^4.17.1",
+    "redis": "^2.8.0"
+  }
+}

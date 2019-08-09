@@ -1,0 +1,10 @@
+version: "3"
+services:
+  passive:
+    build: .
+    environment:
+      REDIS_HOST: "redis"
+    ports:
+      - "3000:3000"
+  redis:
+    image: "redis:alpine"
