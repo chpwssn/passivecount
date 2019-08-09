@@ -73,6 +73,14 @@ app.get("/metrics", async (req, res) => {
   );
 });
 
+app.get("/json", async (req, res) => {
+  const count = await incrbyAsync(client, config.countKey, 1);
+  res.json({
+    count,
+    snark: "error: `impressed` is not a valid state of this API"
+  });
+});
+
 app.listen(config.express.port, () =>
   console.log(`Example app listening on port ${config.express.port}!`)
 );
