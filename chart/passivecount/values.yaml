@@ -23,8 +23,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: helm.passive.chp.sh
-      paths: [/]
+    - helm.passive.chp.sh
 
   tls: []
   #  - secretName: chart-example-tls

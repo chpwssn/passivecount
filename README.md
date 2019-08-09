@@ -38,3 +38,9 @@ It's an example app to refresh my memory on building a [helm](https://helm.sh) c
 #### docker-compose won't hot reload my local changes
 
 This app doesn't really _do_ helpful things like "hot reload"
+
+### helm?
+
+You can deploy the app from its chart. Chances are you don't control `passive.chp.sh` so you can set the ingress host to `yourdomain.com` by deploying with:
+
+    helm install --set ingress.hosts[0]=yourdomain.com chart/passivecount
