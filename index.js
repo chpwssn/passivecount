@@ -63,12 +63,7 @@ app.get("/meta", (req, res) => {
 app.get("/metrics", async (req, res) => {
   const count = await getAsync(client, config.countKey);
   const metricCount = await incrbyAsync(client, config.metricCountKey, 1);
-  const metrics = [
-    `count{domain="${req.hostname}", host="${os.hostname()}"} ${count}`,
-    `metricCount{domain="${
-      req.hostname
-    }", host="${os.hostname()}"} ${metricCount}`
-  ];
+  const metrics = [`count ${count}`, `metricCount ${metricCount}`];
   res.setHeader("content-type", "text/plain");
   res.send(
     [
