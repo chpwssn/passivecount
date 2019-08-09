@@ -1,3 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: passive-redis-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: do-block-storage
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -23,3 +35,10 @@ spec:
               memory: 100Mi
           ports:
             - containerPort: 6379
+          volumeMounts:
+            - name: redis-volume
+              mountPath: /data
+      volumes:
+        - name: redis-volume
+          persistentVolumeClaim:
+            claimName: passive-redis-pvc
