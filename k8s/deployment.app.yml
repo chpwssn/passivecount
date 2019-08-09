@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: passivecount-app
+  labels:
+    app: passivecount
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: passivecount
+  template:
+    metadata:
+      labels:
+        app: passivecount
+    spec:
+      containers:
+        - name: passivecount
+          image: achip/passivecount:1.0.0
+          env:
+            - name: REDIS_HOST
+              value: redis
+          ports:
+            - containerPort: 3000

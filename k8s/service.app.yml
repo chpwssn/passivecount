@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: passivecount-app
+  labels:
+    app: passivecount
+spec:
+  ports:
+    - port: 3000
+      targetPort: 3000
+  selector:
+    app: passivecount

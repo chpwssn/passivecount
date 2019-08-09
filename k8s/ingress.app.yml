@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: passivecount-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: passive.chp.sh
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: passivecount-app
+              servicePort: 3000
